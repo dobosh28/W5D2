@@ -80,13 +80,13 @@ def neighbors_of_certain_b_countries
   FROM
     countries
   WHERE
-    continent = (
+    continent IN (
     SELECT
       continent
     FROM
       countries
     WHERE
-      name = 'Belize' AND name = 'Belgium'
+      name = 'Belize' OR name = 'Belgium'
     );
   SQL
 end
